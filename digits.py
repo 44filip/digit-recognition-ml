@@ -14,5 +14,10 @@ x_test = tf.keras.utils.normalize(x_test, axis=1)
 
 # Layers are stacked sequentially, taking the output of the previous one as input
 model = tf.keras.models.Sequential()
-# Flattens the layer into one dimension, expecting an input array of dimensions 28x28 pixels
+# Flattens layer into one dimension, expecting an input array of dimensions 28x28 pixels
 model.add(tf.keras.layers.Flatten(input_shape=(28,28)))
+# Denses and connects neurons, with ReLU activation twice - good for image classification
+model.add(tf.keras.layers.Dense(units=128, activation=tf.nn.relu))
+model.add(tf.keras.layers.Dense(units=128, activation=tf.nn.relu))
+# Tries to take all the outputs (10 neurons) and classify them as output
+model.add(tf.keras.layers.Dense(units=10, activation=tf.nn.softmax))
