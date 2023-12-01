@@ -1,4 +1,4 @@
-import cv2
+import cv2 as cv
 import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
@@ -28,8 +28,22 @@ model.fit(x_train, y_train, epochs=3)
 
 # Outputting values of test data (97% accuracy)
 loss, accuracy = model.evaluate(x_test, y_test)
-print("Accuracy: " + accuracy)
-print("Loss: " + loss)
+print(f"Accuracy: {accuracy}")
+print(f"Loss: {loss}")
 
 # Saving the data into the model
 model.save("digits.model")
+
+# Loading self-written digit images into the model
+for x in range(1,7):
+    img = cv.imread(f"{x}.png")[:,:,0]
+    # Inverts from white-on-black to black-on-white
+    img = np.invert(np.array([img]))
+    # Inverted image is passed onto the model, which outputs a probability distribution
+    prediction = model.predict(img)
+    # The most probable label is chosen and displayed
+    print(f"The result is probably: {np.argmax(prediction)}")
+    # Visualizes the process in grayscale
+    plt.imshow(img[0], cmap=plt.cm.binary)
+    # Displays the image on the screen
+    plt.show()
