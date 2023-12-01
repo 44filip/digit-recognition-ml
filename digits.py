@@ -21,3 +21,15 @@ model.add(tf.keras.layers.Dense(units=128, activation=tf.nn.relu))
 model.add(tf.keras.layers.Dense(units=128, activation=tf.nn.relu))
 # Tries to take all the outputs (10 neurons) and classify them as output
 model.add(tf.keras.layers.Dense(units=10, activation=tf.nn.softmax))
+
+# Compiling and testing accuracy of the model
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+model.fit(x_train, y_train, epochs=3)
+
+# Outputting values of test data (97% accuracy)
+loss, accuracy = model.evaluate(x_test, y_test)
+print("Accuracy: " + accuracy)
+print("Loss: " + loss)
+
+# Saving the data into the model
+model.save("digits.model")
