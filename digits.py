@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 
-# Imports a dataset of 60,000 handwritten digits
+# Imports a dataset of 1875 handwritten digits
 mnist = tf.keras.datasets.mnist
 # Loads and splits data in a 9:1 ratio
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
