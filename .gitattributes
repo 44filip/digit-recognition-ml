@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.pb linguist-language=Python
+*.pbi linguist-language=Python
+*.pbg linguist-language=Python
