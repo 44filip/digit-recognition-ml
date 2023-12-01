@@ -15,7 +15,7 @@ x_test = tf.keras.utils.normalize(x_test, axis=1)
 # Layers are stacked sequentially, taking the output of the previous one as input
 model = tf.keras.models.Sequential()
 # Flattens layer into one dimension, expecting an input array of dimensions 28x28 pixels
-model.add(tf.keras.layers.Flatten(input_shape=(28,28)))
+model.add(tf.keras.layers.Flatten(input_shape=(28, 28)))
 # Denses and connects neurons, with ReLU activation twice - good for image classification
 model.add(tf.keras.layers.Dense(units=128, activation=tf.nn.relu))
 model.add(tf.keras.layers.Dense(units=128, activation=tf.nn.relu))
@@ -35,8 +35,8 @@ print(f"Loss: {loss}")
 model.save("digits.model")
 
 # Loading self-written digit images into the model
-for x in range(1,7):
-    img = cv.imread(f"{x}.png")[:,:,0]
+for x in range(1, 7):
+    img = cv.imread(f"{x}.png")[:, :, 0]
     # Inverts from white-on-black to black-on-white
     img = np.invert(np.array([img]))
     # Inverted image is passed onto the model, which outputs a probability distribution
