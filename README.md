@@ -45,7 +45,7 @@ pip install opencv-python
 ## Success
 Reference: [https://github.com/NeuralNine]
 \
-![digits-ml](https://github.com/S-Filip/digit-recognition-ml/assets/100999946/b17ca54c-a669-4e0e-b7a1-2b51a19c2803)
+![digit](https://github.com/44filip/digit-recognition-ml/assets/100999946/c01067d5-4e32-4ebb-bf0c-50d10b7c1b67)
 
 @44filip 👋
 
