@@ -47,5 +47,5 @@ Reference: [https://github.com/NeuralNine]
 \
 ![digits-ml](https://github.com/S-Filip/digit-recognition-ml/assets/100999946/b17ca54c-a669-4e0e-b7a1-2b51a19c2803)
 
-@S-Filip 👋
+@44filip 👋
 
