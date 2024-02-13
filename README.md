@@ -4,7 +4,7 @@
 
 **Start by cloning this repository**
 ```bash
-git clone https://github.com/S-Filip/digit-recognition-ml.git
+git clone https://github.com/44filip/digit-recognition-ml.git
 ```
 
 **Install virtualenv if not already installed**
